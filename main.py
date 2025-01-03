@@ -26,7 +26,7 @@ if image_file:
     messages=[
         {"role": "system", "content": "You are a helpful  assistant that responds in Markdown."},
         {"role": "user", "content": [
-        {"type": "text", "text": "Could you describe the image and create a report to highlight important details and provide recommendations. Create a report with Observations, important details, and Recommendations with bullet points."},
+        {"type": "text", "text": "Could you describe the image and create a narrative to highlight important details and provide recommendations. Create a narrative with Observations, important details, and ideas for further analysis with bullet points."},
             {"type": "image_url", "image_url": {
             "url": f"data:image/png;base64,{base64_image}"}
                     }
