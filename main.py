@@ -8,6 +8,7 @@ from openai import OpenAI
 load_dotenv()
 key = os.getenv('OPEN_AI_KEY')
 MODEL = 'gpt-4o'
+api_key = st.secrets["OPENAI_API_KEY"]
 client = OpenAI(api_key = key)
 
 def encode_image(image):
