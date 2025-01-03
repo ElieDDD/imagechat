@@ -15,9 +15,9 @@ def encode_image(image):
     return base64.b64encode(image.read()).decode('utf-8')
 
 st.title('Listening to training images')
-image_file = st.file_uploader('Upload an image file',type = ['png', 'jpg', 'jpeg'])
+image_file = st.file_uploader('Upload an image',type = ['png', 'jpg', 'jpeg'])
 if image_file:
-    st.image(image_file,caption = 'Uploaded image')
+    st.image(image_file,caption = 'image')
 
     base64_image = encode_image(image_file)
 
