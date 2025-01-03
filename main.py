@@ -17,7 +17,7 @@ def encode_image(image):
 st.title('Image Analyzer')
 image_file = st.file_uploader('Upload an image file',type = ['png', 'jpg', 'jpeg'])
 if image_file:
-    st.image(image_file,caption = 'Uploaded image',use_column_width =True)
+    st.image(image_file,caption = 'Uploaded image',use_container_width = true)
 
     base64_image = encode_image(image_file)
 
