@@ -44,6 +44,6 @@ def main():
              
     
 if __name__ == '__main__':
-    GOOGLE_API_KEY = os.environ.get('AIzaSyDZk9yOHovhaUF28ZacD-hXbwv6dQ7IP6Q')
+    GOOGLE_API_KEY = os.environ.get('AIzaSyCnNkw2AbS_SwUQTix_WL_wAiH_gme4FoM')
     genai.configure(api_key=GOOGLE_API_KEY)
     main()
