@@ -14,7 +14,7 @@ client = OpenAI(api_key = key)
 def encode_image(image):
     return base64.b64encode(image.read()).decode('utf-8')
 
-st.title('Image Analyzer')
+st.title('Listening to training images')
 image_file = st.file_uploader('Upload an image file',type = ['png', 'jpg', 'jpeg'])
 if image_file:
     st.image(image_file,caption = 'Uploaded image')
