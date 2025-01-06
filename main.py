@@ -21,7 +21,8 @@ def encode_image(image_path):
 IMAGE_FOLDER = "glics"  # Replace with your folder path
 
 st.title('Listening to training images')
-st.text("Images and text may take time to load, images are blurred here for privacy")
+st.text("Images and response text may take time to load, images are blurred here for privacy")
+st.text("Inspired by Tina Campt's book, Listening to Images, 2017")
 st.button("listen to another image")
 # Select a random image from the folder
 if os.path.exists(IMAGE_FOLDER):
