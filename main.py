@@ -34,8 +34,8 @@ if os.path.exists(IMAGE_FOLDER):
         with Image.open(random_image_path) as img:
             blurred_image = img.filter(ImageFilter.GaussianBlur(15))  # Apply strong blur
             blurred_image.save("blurred_image.png")  # Save the blurred image for display
-            st.image(blurred_image, caption='Blurred Randomly Selected Image')
-
+            #st.image(blurred_image, caption='Blurred Randomly Selected Image')
+            st.image(blurred_image,"", 500)
         # Encode the blurred image
         base64_image = encode_image("blurred_image.png")
 
