@@ -17,7 +17,7 @@ def encode_image(image_path):
         return base64.b64encode(image_file.read()).decode('utf-8')
 
 # Specify the folder containing images
-IMAGE_FOLDER = "path/to/your/image/folder"  # Replace with your folder path
+IMAGE_FOLDER = "glics"  # Replace with your folder path
 
 st.title('Listening to training images')
 
