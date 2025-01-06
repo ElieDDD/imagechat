@@ -4,6 +4,7 @@ import random
 from dotenv import load_dotenv
 import base64
 from openai import OpenAI
+from PIL import Image, ImageFilter
 
 # Load environment variables
 load_dotenv()
@@ -27,10 +28,15 @@ if os.path.exists(IMAGE_FOLDER):
     if image_files:
         random_image = random.choice(image_files)
         random_image_path = os.path.join(IMAGE_FOLDER, random_image)
-        st.image(random_image_path, caption='Randomly Selected Image')
 
-        # Encode the image
-        base64_image = encode_image(random_image_path)
+        # Open the image and apply a strong blur
+        with Image.open(random_image_path) as img:
+            blurred_image = img.filter(ImageFilter.GaussianBlur(15))  # Apply strong blur
+            blurred_image.save("blurred_image.png")  # Save the blurred image for display
+            st.image(blurred_image, caption='Blurred Randomly Selected Image')
+
+        # Encode the blurred image
+        base64_image = encode_image("blurred_image.png")
 
         # Make the API call
         response = client.chat.completions.create(
