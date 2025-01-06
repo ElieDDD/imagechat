@@ -41,7 +41,7 @@ if os.path.exists(IMAGE_FOLDER):
             st.image(blurred_image,"", 200)
         # Encode the blurred image
         #base64_image = encode_image("blurred_image.png")
-        base64_image encode_image("notblurred_image.png")
+        base64_image = encode_image("notblurred_image.png")
         # Make the API call
         response = client.chat.completions.create(
             model=MODEL,
