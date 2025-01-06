@@ -34,12 +34,14 @@ if os.path.exists(IMAGE_FOLDER):
         # Open the image and apply a strong blur
         with Image.open(random_image_path) as img:
             blurred_image = img.filter(ImageFilter.GaussianBlur(15))  # Apply strong blur
+            notblurred_image = img.filter(ImageFilter.GaussianBlur(1))  # Apply strong blur
             blurred_image.save("blurred_image.png")  # Save the blurred image for display
+            notblurred_image.save("notblurred_image.png")
             #st.image(blurred_image, caption='Blurred Randomly Selected Image')
             st.image(blurred_image,"", 200)
         # Encode the blurred image
         #base64_image = encode_image("blurred_image.png")
-        base64_image encode_image(rb)
+        base64_image encode_image("notblurred_image.png")
         # Make the API call
         response = client.chat.completions.create(
             model=MODEL,
